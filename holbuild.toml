@@ -194,3 +194,4 @@ manifest = "holextra.manifest.toml"
 "semantics/alt_semantics/proofs/itree_semanticsPropsScript.sml" = 60.0
 "compiler/backend/semantics/target_itreePropsScript.sml" = 10.0
 "basis/HashtableProofScript.sml" = 10.0
+"basis/basis_ffiScript.sml" = 60.0
