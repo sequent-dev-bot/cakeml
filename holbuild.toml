@@ -191,3 +191,6 @@ manifest = "holextra.manifest.toml"
 "semantics/proofs/cmlPtreeConversionPropsScript.sml" = 10.0
 "semantics/alt_semantics/proofs/bigClockScript.sml" = 10.0
 "compiler/encoders/riscv/proofs/riscv_targetProofScript.sml" = 60.0
+"semantics/alt_semantics/proofs/itree_semanticsPropsScript.sml" = 60.0
+"compiler/backend/semantics/target_itreePropsScript.sml" = 10.0
+"basis/HashtableProofScript.sml" = 10.0
