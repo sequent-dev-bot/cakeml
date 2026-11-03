@@ -243,6 +243,7 @@ manifest = "holextra.manifest.toml"
 "translator/monadic/examples/poly_array_sortProgScript.sml" = 10.0
 "candle/standard/semantics/holAxiomsScript.sml" = 10.0
 "candle/standard/semantics/holLightConsistencyScript.sml" = 10.0
+"pancake/proofs/pan_to_wordProofScript.sml" = 10.0
 
 # This theory records the current build date and tool versions.
 [actions.compilerTheory]
