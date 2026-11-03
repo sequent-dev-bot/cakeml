@@ -203,6 +203,8 @@ manifest = "holextra.manifest.toml"
 
 "semantics/alt_semantics/proofs/funBigStepEquivScript.sml" = 10.0
 
+"compiler/encoders/arm8/proofs/arm8_targetProofScript.sml" = 600.0
+
 # This theory records the current build date and tool versions.
 [actions.compilerTheory]
 impure = true
