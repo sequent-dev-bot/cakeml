@@ -195,3 +195,8 @@ manifest = "holextra.manifest.toml"
 "compiler/backend/semantics/target_itreePropsScript.sml" = 10.0
 "basis/HashtableProofScript.sml" = 10.0
 "basis/basis_ffiScript.sml" = 60.0
+"characteristic/examples/cf_examplesScript.sml" = 10.0
+
+# This theory records the current build date and tool versions.
+[actions.compilerTheory]
+impure = true
