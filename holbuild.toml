@@ -240,6 +240,7 @@ manifest = "holextra.manifest.toml"
 "candle/standard/syntax/little_theories/littleTheoriesSyntaxOldSystemScript.sml" = 60.0
 "compiler/repl/astCanonicalScript.sml" = 60.0
 "pancake/proofs/pan_globalsProofScript.sml" = 60.0
+"translator/monadic/examples/poly_array_sortProgScript.sml" = 10.0
 
 # This theory records the current build date and tool versions.
 [actions.compilerTheory]
