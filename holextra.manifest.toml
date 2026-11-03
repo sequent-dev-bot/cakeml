@@ -36,3 +36,6 @@ loads = ["assemblerLib", "MutableMap16"]
 
 [actions.mips]
 loads = ["assemblerLib", "MutableMap16"]
+
+[actions.x64]
+loads = ["assemblerLib", "MutableMap16"]
