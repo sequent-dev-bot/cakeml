@@ -223,6 +223,7 @@ manifest = "holextra.manifest.toml"
 "compiler/repl/evaluate_initScript.sml" = 60.0
 "compiler/repl/repl_typesScript.sml" = 10.0
 "candle/prover/permsScript.sml" = 10.0
+"candle/standard/syntax/holBoolSyntaxScript.sml" = 10.0
 
 # This theory records the current build date and tool versions.
 [actions.compilerTheory]
