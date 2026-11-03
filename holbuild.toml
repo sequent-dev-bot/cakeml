@@ -212,6 +212,7 @@ manifest = "holextra.manifest.toml"
 "pancake/semantics/pan_itreeSemScript.sml" = 60.0
 "pancake/semantics/pan_itreePropsScript.sml" = 10.0
 "pancake/decompiler/panItreeAbsSemScript.sml" = 10.0
+"compiler/repl/evaluate_skipScript.sml" = 60.0
 
 # This theory records the current build date and tool versions.
 [actions.compilerTheory]
