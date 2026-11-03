@@ -18,3 +18,18 @@ members = [
 ]
 exclude = ["examples/l3-machine-code/monadic-arm"]
 exclude_globs = ["*/selftest.sml"]
+
+[actions.MutableMap16]
+loads = ["Ptree", "Map", "MutableMapFunctor"]
+
+[actions.arm8]
+loads = ["assemblerLib", "MutableMap16"]
+
+[actions.FP32]
+loads = ["FP"]
+
+[actions.FP64]
+loads = ["FP"]
+
+[actions.arm]
+loads = ["assemblerLib", "MutableMap16"]
