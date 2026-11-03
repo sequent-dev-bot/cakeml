@@ -208,6 +208,7 @@ manifest = "holextra.manifest.toml"
 "compiler/encoders/arm7/proofs/arm7_targetProofScript.sml" = 180.0
 "pancake/semantics/loopPropsScript.sml" = 10.0
 "compiler/backend/ag32/ag32_memoryScript.sml" = 10.0
+"pancake/semantics/panPropsScript.sml" = 10.0
 
 # This theory records the current build date and tool versions.
 [actions.compilerTheory]
