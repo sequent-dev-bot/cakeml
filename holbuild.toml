@@ -220,6 +220,7 @@ manifest = "holextra.manifest.toml"
 "pancake/proofs/crep_to_loopProofScript.sml" = 10.0
 "pancake/proofs/pan_to_crepProofScript.sml" = 60.0
 "translator/ml_pmatch_demoScript.sml" = 10.0
+"compiler/repl/evaluate_initScript.sml" = 60.0
 
 # This theory records the current build date and tool versions.
 [actions.compilerTheory]
