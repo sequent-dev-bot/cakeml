@@ -226,6 +226,7 @@ manifest = "holextra.manifest.toml"
 "candle/standard/syntax/holBoolSyntaxScript.sml" = 10.0
 "candle/standard/monadic/holKernelProofScript.sml" = 10.0
 "candle/standard/monadic/holKernelPmatchScript.sml" = 10.0
+"candle/prover/compute/compute_pmatchScript.sml" = 10.0
 
 # This theory records the current build date and tool versions.
 [actions.compilerTheory]
