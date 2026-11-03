@@ -233,6 +233,7 @@ manifest = "holextra.manifest.toml"
 "compiler/encoders/x64/proofs/x64_targetProofScript.sml" = 60.0
 "candle/prover/compute/compute_syntaxProofScript.sml" = 60.0
 "semantics/alt_semantics/proofs/itree_semanticsEquivScript.sml" = 10.0
+"candle/standard/semantics/holSoundnessScript.sml" = 10.0
 
 # This theory records the current build date and tool versions.
 [actions.compilerTheory]
