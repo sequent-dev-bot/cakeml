@@ -189,3 +189,5 @@ manifest = "holextra.manifest.toml"
 "compiler/encoders/ag32/proofs/ag32_targetProofScript.sml" = 60.0
 "compiler/backend/San/SanScript.sml" = 60.0
 "semantics/proofs/cmlPtreeConversionPropsScript.sml" = 10.0
+"semantics/alt_semantics/proofs/bigClockScript.sml" = 10.0
+"compiler/encoders/riscv/proofs/riscv_targetProofScript.sml" = 60.0
