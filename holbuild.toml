@@ -199,6 +199,8 @@ manifest = "holextra.manifest.toml"
 
 "compiler/encoders/mips/proofs/mips_targetProofScript.sml" = 180.0
 
+"compiler/backend/semantics/target_itreeEquivScript.sml" = 10.0
+
 # This theory records the current build date and tool versions.
 [actions.compilerTheory]
 impure = true
