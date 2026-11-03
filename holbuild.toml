@@ -253,6 +253,7 @@ manifest = "holextra.manifest.toml"
 "cv_translator/backend_cvScript.sml" = 10.0
 "candle/prover/candle_kernel_funsScript.sml" = 60.0
 "candle/prover/candle_prover_evaluateScript.sml" = 60.0
+"candle/prover/candle_basis_evaluateScript.sml" = 10.0
 
 # This theory records the current build date and tool versions.
 [actions.compilerTheory]
