@@ -201,6 +201,8 @@ manifest = "holextra.manifest.toml"
 
 "compiler/backend/semantics/target_itreeEquivScript.sml" = 10.0
 
+"semantics/alt_semantics/proofs/funBigStepEquivScript.sml" = 10.0
+
 # This theory records the current build date and tool versions.
 [actions.compilerTheory]
 impure = true
