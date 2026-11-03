@@ -197,6 +197,8 @@ manifest = "holextra.manifest.toml"
 "basis/basis_ffiScript.sml" = 60.0
 "characteristic/examples/cf_examplesScript.sml" = 10.0
 
+"compiler/encoders/mips/proofs/mips_targetProofScript.sml" = 180.0
+
 # This theory records the current build date and tool versions.
 [actions.compilerTheory]
 impure = true
