@@ -216,3 +216,21 @@ manifest = "holextra.manifest.toml"
 # This theory records the current build date and tool versions.
 [actions.compilerTheory]
 impure = true
+
+[actions.newsTheory]
+extra_deps = ["pancake/NEWS.md"]
+
+[actions.fibTheory]
+extra_deps = ["pancake/decompiler/examples/fib.pnk"]
+
+[actions.initSharedArrayTheory]
+extra_deps = ["pancake/decompiler/examples/initSharedArray.pnk"]
+
+[actions.revArrayTheory]
+extra_deps = ["pancake/decompiler/examples/revArray.pnk"]
+
+[actions.sumFuncTheory]
+extra_deps = ["pancake/decompiler/examples/sum.pnk"]
+
+[actions.yesTheory]
+extra_deps = ["pancake/decompiler/examples/yes.pnk"]
