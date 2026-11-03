@@ -210,6 +210,7 @@ manifest = "holextra.manifest.toml"
 "compiler/backend/ag32/ag32_memoryScript.sml" = 10.0
 "pancake/semantics/panPropsScript.sml" = 10.0
 "pancake/semantics/pan_itreeSemScript.sml" = 60.0
+"pancake/semantics/pan_itreePropsScript.sml" = 10.0
 
 # This theory records the current build date and tool versions.
 [actions.compilerTheory]
