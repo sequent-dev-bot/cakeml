@@ -31,6 +31,7 @@ manifest = "holextra.manifest.toml"
 
 # Keep the existing proofs where tighter limits would require scaffolding.
 [build.theory_tactic_timeouts]
+"compiler/backend/ag32/proofs/ag32_basis_ffiProofScript.sml" = 10.0
 "compiler/backend/ag32/proofs/ag32_memoryProofScript.sml" = 180.0
 "pancake/proofs/pan_to_targetProofScript.sml" = 60.0
 "compiler/backend/proofs/data_to_word_assign_wordProofScript.sml" = 10.0
