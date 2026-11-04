@@ -31,6 +31,8 @@ manifest = "holextra.manifest.toml"
 
 # Keep the existing proofs where tighter limits would require scaffolding.
 [build.theory_tactic_timeouts]
+"compiler/encoders/arm8_asl/proofs/arm8_asl_targetProofScript.sml" = 600.0
+"compiler/bootstrap/translation/to_flatProgScript.sml" = 10.0
 "compiler/scheme/proofs/scheme_compileCorrectScript.sml" = 60.0
 "compiler/backend/ag32/proofs/ag32_basis_ffiProofScript.sml" = 10.0
 "compiler/backend/ag32/proofs/ag32_memoryProofScript.sml" = 180.0
@@ -295,3 +297,7 @@ extra_deps = ["pancake/decompiler/examples/sum.pnk"]
 
 [actions.yesTheory]
 extra_deps = ["pancake/decompiler/examples/yes.pnk"]
+
+[dependencies.armv86a]
+git = "https://github.com/sequent-dev-bot/armv8.6-asl-snapshot.git"
+rev = "5f3fa680b117abdbf55d01e5125e21ff93ec66fa"
