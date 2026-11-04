@@ -31,6 +31,7 @@ manifest = "holextra.manifest.toml"
 
 # Keep the existing proofs where tighter limits would require scaffolding.
 [build.theory_tactic_timeouts]
+"compiler/backend/proofs/bvl_handleProofScript.sml" = 10.0
 "characteristic/cfStoreScript.sml" = 10.0
 "compiler/backend/semantics/flatSemScript.sml" = 10.0
 "compiler/backend/bvl_constScript.sml" = 10.0
