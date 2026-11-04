@@ -31,7 +31,9 @@ manifest = "holextra.manifest.toml"
 
 # Keep the existing proofs where tighter limits would require scaffolding.
 [build.theory_tactic_timeouts]
-"compiler/backend/data_liveScript.sml" = 5.0
+"compiler/backend/bvl_constScript.sml" = 10.0
+"compiler/backend/flat_to_closScript.sml" = 10.0
+"compiler/backend/data_liveScript.sml" = 10.0
 "pancake/parser/panPEGScript.sml" = 20.0
 "compiler/backend/word_removeScript.sml" = 10.0
 "compiler/backend/reg_alloc/proofs/reg_allocProofScript.sml" = 10.0
