@@ -12,7 +12,12 @@ exclude = ["candle/overloading",
            "compiler/benchmarks",
            "compiler/bootstrap",
            "translator/other-examples",
-           "unverified",
+           "unverified/front-end",
+           "unverified/hol-light-syntax",
+           "unverified/ocaml-syntax",
+           "unverified/reg_alloc",
+           "unverified/sexpr-bootstrap/export",
+           "unverified/sexpr-bootstrap/x64",
            "tutorial",
            "examples"]
 
