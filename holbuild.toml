@@ -31,6 +31,7 @@ manifest = "holextra.manifest.toml"
 
 # Keep the existing proofs where tighter limits would require scaffolding.
 [build.theory_tactic_timeouts]
+"compiler/repl/repl_initScript.sml" = 60.0
 "compiler/repl/repl_inputRepresentationScript.sml" = 60.0
 "compiler/repl/repl_inputInitScript.sml" = 60.0
 "candle/prover/candle_prover_semanticsScript.sml" = 10.0
