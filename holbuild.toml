@@ -31,6 +31,7 @@ manifest = "holextra.manifest.toml"
 
 # Keep the existing proofs where tighter limits would require scaffolding.
 [build.theory_tactic_timeouts]
+"compiler/bootstrap/translation/to_closProgScript.sml" = 60.0
 "compiler/encoders/arm8_asl/proofs/arm8_asl_targetProofScript.sml" = 600.0
 "compiler/bootstrap/translation/to_flatProgScript.sml" = 10.0
 "compiler/scheme/proofs/scheme_compileCorrectScript.sml" = 60.0
