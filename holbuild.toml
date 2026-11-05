@@ -1,5 +1,5 @@
 [holbuild]
-minimum_version = "0.11.7"
+minimum_version = "0.13.5"
 
 [project]
 name = "cakeml-compiler"
@@ -149,3 +149,10 @@ extra_deps = ["pancake/NEWS.md"]
 
 [actions.compilerBuildInfoTheory]
 extra_deps = ["compiler/bootstrap/translation/compiler_build_info.txt"]
+
+[[generate]]
+name = "compiler-build-info"
+command = ["sh", "compiler/bootstrap/translation/update_compiler_build_info.sh"]
+inputs = ["compiler/bootstrap/translation/update_compiler_build_info.sh"]
+outputs = ["compiler/bootstrap/translation/compiler_build_info.txt"]
+always_reexecute = true

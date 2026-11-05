@@ -4,6 +4,9 @@ The translator is proof-producing. This means that each deep embedding
 comes with a certificate theorem that relates the deep embedding to
 the original shallow embedding.
 
+Compiler build provenance is bound by the final program wrappers.
+See [build-info.md](build-info.md) for collection and interface details.
+
 [ag32ProgScript.sml](ag32ProgScript.sml):
 Translate the ag32 instruction encoder and ag32-specific config.
 
