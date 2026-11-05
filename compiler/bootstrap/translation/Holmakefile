@@ -6,3 +6,6 @@ sinclude $(CAKEMLDIR)/developers/readme.mk
 ifdef POLY
 HOLHEAP = $(CAKEMLDIR)/basis/basis-heap
 endif
+
+# Refresh before dependency analysis; unchanged provenance keeps its timestamp.
+compilerBuildInfoTheory.sml compilerBuildInfoTheory.sig compilerBuildInfoTheory.dat: $(if $(shell sh update_compiler_build_info.sh $(protect $(HOLDIR)) && echo refreshed),compiler_build_info.txt,$(error failed to collect compiler build information))

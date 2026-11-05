@@ -3,6 +3,7 @@ name = "cakeml"
 holpath = "CAKEMLDIR"
 
 exclude = [
+  ".holbuild",                                  # staged holbuild copies are not native sources
   "compiler/benchmarks/cakeml_benchmarks/sml",   # plain SML programs, built by their own Makefile
   "compiler/benchmarks/mlton_benchmarks/sml",
   "tutorial/problems"                            # exercises generated from tutorial/solutions

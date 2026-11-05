@@ -342,7 +342,7 @@ QED
 Theorem cake_extract_writes:
    wfcl cl ∧
    extract_fs no_ext (cl,stdin_fs inp) io =
-     SOME (full_compile_32 (TL cl) inp (stdin_fs inp)) ⇒
+     SOME (full_compile_32 current_build_info_str (TL cl) inp (stdin_fs inp)) ⇒
    let events = MAP get_output_io_event io in
    let out = extract_writes 1 events in
    let err = extract_writes 2 events in
@@ -565,7 +565,7 @@ Theorem cake_ag32_next:
   ⇒
    ∃io.
      extract_fs no_ext (cl,stdin_fs inp) io =
-       SOME (full_compile_32 (TL cl) inp (stdin_fs inp)) ∧
+       SOME (full_compile_32 current_build_info_str (TL cl) inp (stdin_fs inp)) ∧
      ∃k1. ∀k. k1 ≤ k ⇒
        let ms = FUNPOW Next k ms0 in
        let outs = MAP (get_ag32_io_event) ms.io_events in

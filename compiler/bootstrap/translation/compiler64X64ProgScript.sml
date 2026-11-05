@@ -3,15 +3,20 @@
 *)
 Theory compiler64X64Prog[no_sig_docs]
 Ancestors
-  compiler64MainProg basis_ffi[qualified]
+  compiler64MainProg compilerBuildInfo basis_ffi[qualified]
 Libs
   preamble ml_translatorLib cfLib basis
 
 val _ = temp_delsimps ["NORMEQ_CONV", "lift_disj_eq", "lift_imp_disj"];
 val _ = translation_extends "compiler64MainProg";
 
+val _ = next_ml_names := ["compiler_current_build_info_str"];
+val res = translate current_build_info_str_def;
+val compiler_current_build_info_str_v_thm =
+  fetch "-" "compiler_current_build_info_str_v_thm";
+
 Quote add_cakeml:
-  fun main u = main_host (Hostx64,u)
+  fun main u = main_host (Hostx64,compiler_current_build_info_str,u)
 End
 
 val main_v_def = fetch "-" "main_v_def";
@@ -21,7 +26,7 @@ Theorem main_spec:
   app (p:'ffi ffi_proj) main_v [Conv NONE []]
       (STDIO fs * COMMANDLINE cl)
       (POSTv uv. &UNIT_TYPE () uv *
-       STDIO (full_compile_64 (TL cl) (get_stdin fs) fs) *
+       STDIO (full_compile_64 current_build_info_str (TL cl) (get_stdin fs) fs) *
        COMMANDLINE cl)
 Proof
   strip_tac
@@ -40,17 +45,17 @@ Proof
   \\ xlet_auto >- (xcon \\ xsimpl)
   \\ gvs []
   \\ xapp_spec main_host_spec
-  \\ simp []
+  \\ simp [current_build_info_str_def, compiler_current_build_info_str_v_thm]
 QED
 
 Theorem main_whole_prog_spec:
   ~has_repl_flag (TL cl) /\ IS_SOME (stdin_content fs) ==>
   whole_prog_spec main_v cl fs NONE
-    ((=) (full_compile_64 (TL cl) (get_stdin fs) fs))
+    ((=) (full_compile_64 current_build_info_str (TL cl) (get_stdin fs) fs))
 Proof
   strip_tac
   \\ simp [basis_ffiTheory.whole_prog_spec_def]
-  \\ qexists_tac `full_compile_64 (TL cl) (get_stdin fs) fs`
+  \\ qexists_tac `full_compile_64 current_build_info_str (TL cl) (get_stdin fs) fs`
   \\ reverse conj_tac
   >- simp [GSYM full_compile_host_x64,
            GSYM full_compile_host_with_numchars,with_same_numchars]
@@ -78,7 +83,7 @@ Theorem semantics_compiler64_x64_prog:
        ?io_events.
          behaviour = Terminate Success io_events /\
          extract_fs ext (cl,fs) io_events =
-           SOME (full_compile_64 (TL cl) (get_stdin fs) fs))
+           SOME (full_compile_64 current_build_info_str (TL cl) (get_stdin fs) fs))
 Proof
   strip_tac
   \\ irule sem_thm

@@ -7,11 +7,15 @@ version = "0.1.1"
 
 [build]
 roots = ["compiler/proofs/compilerProofScript.sml"]
-exclude = ["candle",
+exclude = ["candle/overloading",
            "compiler/benchmarks",
-           "compiler/bootstrap",
+           "compiler/bootstrap/compilation",
            "translator/other-examples",
-           "unverified",
+           "unverified/front-end",
+           "unverified/hol-light-syntax",
+           "unverified/ocaml-syntax",
+           "unverified/sexpr-bootstrap/export",
+           "unverified/sexpr-bootstrap/x64",
            "tutorial",
            "examples"]
 
@@ -26,6 +30,10 @@ manifest = "holextra.manifest.toml"
 
 # Keep the existing proofs where tighter limits would require scaffolding.
 [build.theory_tactic_timeouts]
+"compiler/bootstrap/translation/to_flatProgScript.sml" = 10.0
+"compiler/bootstrap/translation/to_closProgScript.sml" = 60.0
+"compiler/bootstrap/translation/inferProgScript.sml" = 10.0
+"compiler/bootstrap/translation/compiler64MainProgScript.sml" = 60.0
 "compiler/backend/data_liveScript.sml" = 5.0
 "pancake/parser/panPEGScript.sml" = 20.0
 "compiler/backend/word_removeScript.sml" = 10.0
@@ -139,6 +147,5 @@ manifest = "holextra.manifest.toml"
 [actions.newsTheory]
 extra_deps = ["pancake/NEWS.md"]
 
-# This theory records the current build date and tool versions.
-[actions.compilerTheory]
-impure = true
+[actions.compilerBuildInfoTheory]
+extra_deps = ["compiler/bootstrap/translation/compiler_build_info.txt"]
