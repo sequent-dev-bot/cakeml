@@ -4,6 +4,9 @@ The translator is proof-producing. This means that each deep embedding
 comes with a certificate theorem that relates the deep embedding to
 the original shallow embedding.
 
+Compiler build information is collected separately so shared compiler proofs
+and translations can be reused. See [build-info.md](build-info.md).
+
 [ag32ProgScript.sml](ag32ProgScript.sml):
 Translate the ag32 instruction encoder and ag32-specific config.
 
@@ -15,6 +18,9 @@ Translate the ARMv8 instruction encoder and ARMv8-specific config.
 
 [basis_defProgScript.sml](basis_defProgScript.sml):
 Translate the basis library term.
+
+[compilerBuildInfoScript.sml](compilerBuildInfoScript.sml):
+Concrete provenance is a final-program input, not a compiler dependency.
 
 [compiler_ag32ProgScript.sml](compiler_ag32ProgScript.sml):
 Native AG32 batch entry point for the fused compiler.

@@ -267,14 +267,13 @@ End
 
 val _ = next_ml_names := ["compiler_has_repl_flag"];
 val r = translate (has_repl_flag_def |> REWRITE_RULE [MEMBER_INTRO]);
-val r = translate (has_pancake_flag_def |> SIMP_RULE (srw_ss()) [MEMBER_INTRO]);
 
 Definition full_compile_host_def:
-  full_compile_host host cl inp fs =
+  full_compile_host build_info host cl inp fs =
   if has_help_flag cl then
     add_stdout fs help_string
   else if has_version_flag cl then
-    add_stdout fs current_build_info_str
+    add_stdout fs build_info
   else
     case parse_pancake_feature cl of
       SOME rest => add_stdout fs $ print_bool $ news$query_news rest
@@ -289,13 +288,13 @@ Definition full_compile_host_def:
 End
 
 Theorem full_compile_host_x64:
-  full_compile_host HostX64 cl inp fs = full_compile cl inp fs
+  full_compile_host build_info HostX64 cl inp fs = full_compile build_info cl inp fs
 Proof
   simp [full_compile_host_def,full_compile_def]
 QED
 
 Quote add_cakeml:
-  fun main_host (host,u) =
+  fun main_host (host,build_info,u) =
   let
     val cl = CommandLine.arguments ()
   in
@@ -304,7 +303,7 @@ Quote add_cakeml:
     else if compiler_has_help_flag cl then
       print compiler_help_string
     else if compiler_has_version_flag cl then
-      print compiler_current_build_info_str
+      print build_info
     else
       case compiler_parse_pancake_feature cl of
         Some rest => print (compiler_print_bool (news_query_news rest))
@@ -328,12 +327,13 @@ val main_host_v_def = fetch "-" "main_host_v_def";
 
 Theorem main_host_spec:
   COMPILER_MAINPROG_COMPILER_HOST_TYPE host host_v /\
+  STRING_TYPE build_info build_info_v /\
   ~has_repl_flag (TL cl) /\ IS_SOME (stdin_content fs) ==>
   app (p:'ffi ffi_proj) main_host_v
-      [Conv NONE [host_v; Conv NONE []]] (STDIO fs * COMMANDLINE cl)
+      [Conv NONE [host_v; build_info_v; Conv NONE []]] (STDIO fs * COMMANDLINE cl)
       (POSTv uv.
        &UNIT_TYPE () uv
-       * STDIO (full_compile_host host (TL cl) (get_stdin fs) fs)
+       * STDIO (full_compile_host build_info host (TL cl) (get_stdin fs) fs)
        * COMMANDLINE cl)
 Proof
   rpt strip_tac
@@ -380,12 +380,8 @@ Proof
     simp [full_compile_host_def]
     \\ xapp
     \\ CONV_TAC SWAP_EXISTS_CONV
-    \\ qexists_tac `current_build_info_str`
-    \\ fs [compilerTheory.current_build_info_str_def,
-           compiler_current_build_info_str_v_thm]
+    \\ qexists_tac `build_info`
     \\ xsimpl
-    \\ rename1 `add_stdout _ (strlit string)`
-    \\ CONV_TAC SWAP_EXISTS_CONV
     \\ qexists_tac `fs`
     \\ xsimpl)
   \\ xlet_auto >- xsimpl
@@ -440,8 +436,8 @@ Proof
 QED
 
 Theorem full_compile_host_with_numchars:
-  full_compile_host host cl inp (fs with numchars := ns) =
-  full_compile_host host cl inp fs with numchars := ns
+  full_compile_host build_info host cl inp (fs with numchars := ns) =
+  full_compile_host build_info host cl inp fs with numchars := ns
 Proof
   rw [full_compile_host_def,UNCURRY,fastForwardFD_with_numchars,
       add_stdo_with_numchars]
