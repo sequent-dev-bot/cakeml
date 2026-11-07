@@ -38,6 +38,7 @@ including their binary outputs.
 The three bootstrap theories declare their generated `cake.S` files as
 outputs; x64 and ARM8 also declare `config_enc_str.txt`. Holbuild preserves
 these files after execution and restores them with cached theories.
+The S-expression export similarly declares its generated `cake-sexpr` file.
 
 `full_compile` and `full_compile_host` take the build-information mlstring
 first. The shared main specifications quantify
