@@ -17,7 +17,14 @@ holbuild -j4 build compiler_x64ProgTheory
 ```
 
 The collector uses the HOL checkout selected by `holbuild context`. An
-explicit HOL checkout can instead be supplied as its only argument.
+explicit HOL checkout can instead be supplied as the first argument; an
+optional second argument selects Poly/ML. `HOLBUILD_POLY` overrides that
+selection. Native Holmake supplies its configured Poly/ML executable.
+To override the collector's Poly/ML selection for a native build, set
+`HOLBUILD_POLY` in the environment to the executable used by that build.
+A command-line `Holmake POLY=...` override alone can refresh the
+metadata twice while Holmake parses its dependencies, changing the
+timestamp even when the source identity is unchanged.
 `compilerProofTheory` and shared translation targets do not require this
 preparation, because they do not depend on the provenance file.
 
@@ -28,6 +35,9 @@ source/tool identity retains the producer's timestamp, so cached final
 programs keep their original date. A different commit or dirty fingerprint
 refreshes the metadata, invalidating final-program and bootstrap actions,
 including their binary outputs.
+The three bootstrap theories declare their generated `cake.S` files as
+outputs; x64 and ARM8 also declare `config_enc_str.txt`. Holbuild preserves
+these files after execution and restores them with cached theories.
 
 `full_compile` and `full_compile_host` take the build-information mlstring
 first. The shared main specifications quantify

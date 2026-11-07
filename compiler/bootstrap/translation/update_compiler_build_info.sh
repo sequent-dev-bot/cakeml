@@ -1,13 +1,13 @@
 #!/bin/sh
 # Collect provenance before building a final compiler program.
 set -eu
-if [ "$#" -gt 1 ]; then
-  echo "usage: $0 [HOLDIR]" >&2
+if [ "$#" -gt 2 ]; then
+  echo "usage: $0 [HOLDIR [POLY]]" >&2
   exit 1
 fi
 script_dir=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
 cakeml_dir=$(CDPATH= cd -- "$script_dir/../../.." && pwd)
-if [ "$#" -eq 1 ]; then
+if [ "$#" -ge 1 ]; then
   hol_dir=$1
 else
   context=$(holbuild --source-dir "$cakeml_dir" context)
@@ -32,7 +32,8 @@ revision () {
     printf '%s unknown\n' "$1"
   fi
 }
-poly_version=$("${HOLBUILD_POLY:-poly}" -v)
+poly_bin=${HOLBUILD_POLY:-${2:-poly}}
+poly_version=$("$poly_bin" -v)
 identity=$(
   revision 'CakeML:' "$cakeml_dir"
   revision 'HOL4:  ' "$hol_dir"

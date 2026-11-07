@@ -8,5 +8,8 @@ Ancestors
 Libs
   preamble eval_cake_compile_ag32Lib
 
+fun holbuild_extra_outputs (_ : string list) = ();
+val () = holbuild_extra_outputs ["cake.S"];
+
 Theorem compiler_compiled =
   eval_cake_compile_ag32 "" compiler_ag32_prog_def "cake.S";
