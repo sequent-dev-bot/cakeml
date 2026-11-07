@@ -31,6 +31,7 @@ manifest = "holextra.manifest.toml"
 [build.theory_tactic_timeouts]
 "compiler/repl/compiler_replProofScript.sml" = 60.0
 "compiler/bootstrap/translation/from_flatProgScript.sml" = 60.0
+"compiler/bootstrap/translation/from_cakeProgScript.sml" = 10.0
 "candle/standard/monadic/holKernelPmatchScript.sml" = 10.0
 "candle/prover/permsScript.sml" = 10.0
 "candle/prover/compute/compute_pmatchScript.sml" = 10.0
