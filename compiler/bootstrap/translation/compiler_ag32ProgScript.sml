@@ -36,6 +36,7 @@ Proof
   \\ xcf_with_def main_v_def
   \\ rewrite_tac main_env_defs
   \\ xlet_auto >- (xcon \\ xsimpl)
+  \\ gvs []
   \\ xapp_spec main_batch_spec
   \\ simp [current_build_info_str_def, compiler_current_build_info_str_v_thm]
 QED
