@@ -19,6 +19,7 @@ Quote add_cakeml:
 End
 
 val main_v_def = fetch "-" "main_v_def";
+val ml_progLib.ML_code (_, env_defs, _, _) = get_ml_prog_state ();
 
 Theorem main_spec:
   ~has_repl_flag (TL cl) /\ IS_SOME (stdin_content fs) ==>
@@ -34,13 +35,15 @@ Proof
   \\ xlet `POSTv v. &COMPILER_MAINPROG_COMPILER_HOST_TYPE HostX64 v *
                 (STDIO fs * COMMANDLINE cl)`
   >- (
-    simp [cfTheory.cf_con_def,semanticPrimitivesTheory.do_con_check_def,
+    simp ([cfTheory.cf_con_def,semanticPrimitivesTheory.do_con_check_def,
           semanticPrimitivesTheory.build_conv_def,cfNormaliseTheory.exp2v_list_def,
-          cfTheory.extend_env_rec_def,ml_progTheory.merge_env_def]
-    \\ CONV_TAC (DEPTH_CONV ml_progLib.nsLookup_conv)
-    \\ simp [COMPILER_MAINPROG_COMPILER_HOST_TYPE_def]
+          cfTheory.extend_env_rec_def,ml_progTheory.merge_env_def,
+          ml_progTheory.write_rec_def,ml_progTheory.write_simp,
+          ml_progTheory.write_cons_simp,ml_progTheory.nsLookup_merge_env,
+          COMPILER_MAINPROG_COMPILER_HOST_TYPE_def] @ List.take (tl env_defs, 23))
     \\ irule cfHeapsTheory.local_elim
     \\ xsimpl)
+  \\ rewrite_tac (List.take (tl env_defs, 2))
   \\ xlet_auto >- (xcon \\ xsimpl)
   \\ gvs []
   \\ xapp_spec main_host_spec
