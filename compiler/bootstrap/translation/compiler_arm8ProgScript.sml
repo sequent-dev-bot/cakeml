@@ -11,9 +11,8 @@ val _ = temp_delsimps ["NORMEQ_CONV", "lift_disj_eq", "lift_imp_disj"];
 val _ = translation_extends "compiler_mainProg";
 
 val _ = next_ml_names := ["compiler_current_build_info_str"];
-val res = translate current_build_info_str_def;
 val compiler_current_build_info_str_v_thm =
-  fetch "-" "compiler_current_build_info_str_v_thm";
+  translate current_build_info_str_def;
 
 Quote add_cakeml:
   fun main u = main_host (Hostarm8,compiler_current_build_info_str,u)

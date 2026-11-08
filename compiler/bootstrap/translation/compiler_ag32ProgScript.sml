@@ -13,9 +13,8 @@ val _ = ml_translatorLib.use_sub_check true;
 val _ = use_long_names := true;
 
 val _ = next_ml_names := ["compiler_current_build_info_str"];
-val res = translate current_build_info_str_def;
 val compiler_current_build_info_str_v_thm =
-  fetch "-" "compiler_current_build_info_str_v_thm";
+  translate current_build_info_str_def;
 
 Quote add_cakeml:
   fun main u = main_batch (compiler_current_build_info_str,u)
