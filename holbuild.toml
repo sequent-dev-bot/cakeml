@@ -7,9 +7,9 @@ version = "0.1.1"
 
 [build]
 roots = ["compiler/proofs/compilerProofScript.sml"]
-exclude = ["candle",
+exclude = ["candle/overloading",
            "compiler/benchmarks",
-           "compiler/bootstrap",
+           "compiler/bootstrap/compilation",
            "translator/other-examples",
            "unverified",
            "tutorial",
@@ -26,6 +26,29 @@ manifest = "holextra.manifest.toml"
 
 # Keep the existing proofs where tighter limits would require scaffolding.
 [build.theory_tactic_timeouts]
+"compiler/repl/compiler_replProofScript.sml" = 180.0
+"compiler/bootstrap/translation/from_flatProgScript.sml" = 60.0
+"compiler/bootstrap/translation/from_cakeProgScript.sml" = 10.0
+"compiler/bootstrap/translation/parserProgScript.sml" = 10.0
+"compiler/bootstrap/translation/inferProgScript.sml" = 10.0
+"compiler/bootstrap/translation/compiler_mainProgScript.sml" = 60.0
+"candle/standard/monadic/holKernelProofScript.sml" = 10.0
+"candle/standard/monadic/holKernelPmatchScript.sml" = 10.0
+"candle/prover/permsScript.sml" = 10.0
+"candle/prover/compute/compute_pmatchScript.sml" = 10.0
+"candle/standard/ml_kernel/ml_hol_kernel_funsProgScript.sml" = 10.0
+"candle/prover/candle_kernel_valsScript.sml" = 60.0
+"basis/basis_ffiScript.sml" = 60.0
+"cv_translator/to_data_cvScript.sml" = 10.0
+"cv_translator/backend_cvScript.sml" = 10.0
+"compiler/repl/evaluate_skipScript.sml" = 60.0
+"compiler/repl/evaluate_initScript.sml" = 60.0
+"compiler/repl/repl_typesScript.sml" = 10.0
+"compiler/repl/repl_decs_allowedScript.sml" = 10.0
+"compiler/repl/astCanonicalScript.sml" = 60.0
+"compiler/repl/repl_initScript.sml" = 60.0
+"compiler/repl/repl_inputInitScript.sml" = 60.0
+"compiler/repl/repl_inputRepresentationScript.sml" = 60.0
 "compiler/backend/data_liveScript.sml" = 5.0
 "pancake/parser/panPEGScript.sml" = 20.0
 "compiler/backend/word_removeScript.sml" = 10.0
