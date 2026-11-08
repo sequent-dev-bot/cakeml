@@ -43,6 +43,7 @@ manifest = "holextra.manifest.toml"
 "candle/prover/permsScript.sml" = 10.0
 "candle/prover/compute/compute_pmatchScript.sml" = 10.0
 "candle/prover/compute/compute_syntaxProofScript.sml" = 60.0
+"candle/prover/compute/computeProofScript.sml" = 60.0
 "candle/standard/ml_kernel/ml_hol_kernel_funsProgScript.sml" = 10.0
 "candle/prover/candle_kernel_valsScript.sml" = 60.0
 "basis/basis_ffiScript.sml" = 60.0
