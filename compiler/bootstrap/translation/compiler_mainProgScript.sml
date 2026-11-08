@@ -382,6 +382,7 @@ Proof
     \\ CONV_TAC SWAP_EXISTS_CONV
     \\ qexists_tac `build_info`
     \\ xsimpl
+    \\ CONV_TAC SWAP_EXISTS_CONV
     \\ qexists_tac `fs`
     \\ xsimpl)
   \\ xlet_auto >- xsimpl
