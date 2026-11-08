@@ -21,6 +21,8 @@ Quote add_cakeml:
 End
 
 val main_v_def = fetch "-" "main_v_def";
+val ml_progLib.ML_code (_, env_defs, _, _) = get_ml_prog_state ();
+val main_env_defs = List.take (tl env_defs, 2);
 
 Theorem main_spec:
   IS_SOME (stdin_content fs) ⇒
@@ -32,7 +34,9 @@ Theorem main_spec:
 Proof
   strip_tac
   \\ xcf_with_def main_v_def
+  \\ rewrite_tac main_env_defs
   \\ xlet_auto >- (xcon \\ xsimpl)
+  \\ gvs []
   \\ xapp_spec main_batch_spec
   \\ simp [current_build_info_str_def, compiler_current_build_info_str_v_thm]
 QED

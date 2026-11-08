@@ -40,7 +40,8 @@ Proof
           cfTheory.extend_env_rec_def,ml_progTheory.merge_env_def,
           ml_progTheory.write_rec_def,ml_progTheory.write_simp,
           ml_progTheory.write_cons_simp,ml_progTheory.nsLookup_merge_env,
-          COMPILER_MAINPROG_COMPILER_HOST_TYPE_def] @ List.take (tl env_defs, 23))
+          COMPILER_MAINPROG_COMPILER_HOST_TYPE_def,
+          compiler_mainProgTheory.compiler_mainProg_env_def] @ List.take (tl env_defs, 23))
     \\ irule cfHeapsTheory.local_elim
     \\ xsimpl)
   \\ rewrite_tac (List.take (tl env_defs, 2))

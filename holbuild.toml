@@ -29,7 +29,6 @@ manifest = "holextra.manifest.toml"
 
 # Keep the existing proofs where tighter limits would require scaffolding.
 [build.theory_tactic_timeouts]
-"compiler/bootstrap/translation/compiler_ag32ProgScript.sml" = 60.0
 "compiler/bootstrap/translation/compiler_mainProgScript.sml" = 60.0
 "compiler/repl/compiler_replProofScript.sml" = 60.0
 "compiler/bootstrap/translation/from_flatProgScript.sml" = 60.0
