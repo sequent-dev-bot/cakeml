@@ -33,6 +33,7 @@ manifest = "holextra.manifest.toml"
 "compiler/encoders/arm8/proofs/arm8_targetProofScript.sml" = 180.0
 "compiler/encoders/ag32/proofs/ag32_targetProofScript.sml" = 60.0
 "compiler/backend/ag32/proofs/ag32_memoryProofScript.sml" = 180.0
+"compiler/backend/ag32/proofs/ag32_basis_ffiProofScript.sml" = 60.0
 "compiler/bootstrap/translation/compiler_mainProgScript.sml" = 60.0
 "compiler/repl/compiler_replProofScript.sml" = 180.0
 "compiler/bootstrap/translation/from_flatProgScript.sml" = 60.0
