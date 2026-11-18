@@ -9,9 +9,13 @@ version = "0.1.1"
 roots = ["compiler/proofs/compilerProofScript.sml"]
 exclude = ["candle/overloading",
            "compiler/benchmarks",
-           "compiler/bootstrap/compilation",
+           "compiler/bootstrap/compilation/ag32",
+           "compiler/bootstrap/compilation/arm8",
            "translator/other-examples",
-           "unverified",
+           "unverified/front-end",
+           "unverified/hol-light-syntax",
+           "unverified/ocaml-syntax",
+           "unverified/sexpr-bootstrap",
            "tutorial",
            "examples"]
 
