@@ -169,3 +169,16 @@ extra_deps = ["pancake/NEWS.md"]
 # This theory records the current build date and tool versions.
 [actions.compilerTheory]
 impure = true
+
+# Load the translator codec before the program theories, as the basis heap does.
+[actions.explorerProgTheory]
+loads = ["basisFunctionsLib"]
+
+[actions.printingProgTheory]
+loads = ["basisFunctionsLib"]
+
+[actions.from_pancakeProgTheory]
+loads = ["basisFunctionsLib"]
+
+[actions.candle_prover_semanticsTheory]
+loads = ["basisFunctionsLib"]
