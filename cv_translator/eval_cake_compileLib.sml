@@ -157,6 +157,8 @@ fun eval_cake_compile_general (arch : arch_thms) (input : comp_input) = let
     “explode $ concat $ misc$append (x64_export x64_ffis x64_code x64_data x64_syms)”
   *)
   val _ = report "about to run cv_compute on export"
+  (* Share large compiler results before evaluating the assembly export. *)
+  val _ = PolyML.shareCommonData (PolyML.rootFunction, export_tm, conf_def, result_th)
   val l = cv_computeLib.cv_compute (cv_transLib.cv_eqs_for export_tm) export_tm
           |> concl |> rhs
   val _ = report "cv_compute on export finished"
